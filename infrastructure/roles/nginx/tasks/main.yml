@@ -1,7 +1,7 @@
 ---
-  - name: install epel
+  - name: Install epel
     yum:
-      name: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+      name: "{{epel_link}}"
       state: present
   - name: Install nginx
     yum:
@@ -14,3 +14,4 @@
     service:
       name: nginx
       state: restarted
+#setup_proxy

@@ -3,10 +3,25 @@
   become: yes
   tags: [web]
   vars:
-    my_domain: 3.121.29.42
-    proxy_to: ec2-3-121-29-42.eu-central-1.compute.amazonaws.com
+    my_domain: 18.195.90.94
+    proxy_to: ec2-18-195-90-94.eu-central-1.compute.amazonaws.com
   roles:
     - nginx
     - telegraf
   tasks:
     - include_tasks: tasks/os-dependencies.yml
+
+- hosts: stats_nodes
+  become: yes
+  tags: [stats_server]
+  vars:
+    metrics_db_name: "metrics"
+    metrics_db_pass: "metrics"
+    metrics_db_user: "metrics"
+    datasource_name: "my-influx"
+    grafana_http_port: 3000
+    telegraf_configuration: "telegraf_default.conf"
+  roles:
+    - influxdb
+    - grafana
+    - telegraf
