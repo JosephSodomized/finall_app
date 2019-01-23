@@ -3,8 +3,8 @@
   become: yes
   tags: [web]
   vars:
-    my_domain: 18.195.90.94
-    proxy_to: ec2-18-195-90-94.eu-central-1.compute.amazonaws.com
+    my_domain: 3.120.130.55
+    proxy_to: ec2-3-120-130-55.eu-central-1.compute.amazonaws.com
   roles:
     - nginx
     - telegraf
@@ -25,3 +25,5 @@
     - influxdb
     - grafana
     - telegraf
+  tasks:
+    - include_tasks: tasks/configure-grafana.yml
