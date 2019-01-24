@@ -3,11 +3,12 @@
   become: yes
   tags: [web]
   vars:
-    my_domain: 18.184.7.205
-    proxy_to: ec2-3-122-228-239.eu-central-1.compute.amazonaws.com
+    my_domain: 3.122.228.239
+    my_private: 172.31.20.204
+    my_private2: 172.31.22.203
   roles:
     - nginx
-    - telegraf
+
   tasks:
     - include_tasks: tasks/os-dependencies.yml
 
