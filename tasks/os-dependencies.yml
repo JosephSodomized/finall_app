@@ -1,5 +1,5 @@
 ---
-- name: "Install packages"
+- name: Install Packages
   yum:
     name: "{{packages}}"
     state: present
@@ -11,7 +11,7 @@
       - php
       - php-mysql
       - MySQL-python
-- name: "Install apache modules"
+- name: Install apache modules
   apache2_module:
     state: present
     name: status

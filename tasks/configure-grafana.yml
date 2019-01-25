@@ -1,5 +1,5 @@
 ---
-- name: Create influxdb datasource
+- name: Create Influxdb datasource
   tags: [grafana]
   grafana_datasource:
     name: "{{datasource_name}}"

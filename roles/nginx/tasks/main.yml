@@ -1,16 +1,16 @@
 ---
-  - name: Install epel
+  - name: Install Epel
     yum:
       name: "{{epel_link}}"
       state: present
-  - name: Install nginx
+  - name: Install Nginx
     yum:
       name: nginx
       state: latest
   - template:
       src: templates/nginx.conf
       dest: /etc/nginx/conf.d/nginx.conf
-  - name: restart nginx
+  - name: Restart Nginx
     service:
       name: nginx
       state: restarted

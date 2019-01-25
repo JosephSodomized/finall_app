@@ -1,11 +1,10 @@
 ---
 - hosts: web_nodes
   become: yes
-  tags: [web]
   vars:
-    my_domain: 3.122.228.239
-    my_private: 172.31.20.204
-    my_private2: 172.31.22.203
+    my_domain: 3.120.132.149
+    my_private: 172.31.20.227
+    my_private2: 172.31.30.56
   roles:
     - nginx
 
@@ -14,7 +13,6 @@
 
 - hosts: stats_nodes
   become: yes
-  tags: [stats_server]
   vars:
     metrics_db_name: "metrics"
     metrics_db_pass: "metrics"

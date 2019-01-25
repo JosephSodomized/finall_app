@@ -14,7 +14,7 @@
     port: 8086
     delay: 10
 
-- name: setup dabatase on influxdb
+- name: setupy dabatase on influxdb
   shell: "curl -X POST 'http://localhost:8086/db?u={{ metrics_db_user }}&p={{ metrics_db_passw}}' -d '{\"name\": \"{{ metrics_db_name }}\"}'"
 
 

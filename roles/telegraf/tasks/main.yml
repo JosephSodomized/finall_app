@@ -1,14 +1,14 @@
 ---
-- name: installation
+- name: Installation
   yum:
     name: "{{rmp_telegraf}}"
 
-- name: copy config
+- name: Copy Telegraf Config
   template:
     src: "{{telegraf_config_path}}"
     dest: /etc/telegraf/telegraf.conf
 
-- name: restart telegraf
+- name: Restart Telegraf
   service:
     name: telegraf
     state: restarted
